@@ -7,15 +7,14 @@ clear all
 % 700
 % 900
 
-rng(0);
-A = rand(6);
+A = rand(10);
 
 tic;
 %B = BLAS2LU(A);
-B = BLAS2LUPP(A);
+%B = BLAS2LUPP(A);
 
-%B = BLAS3LU(A,3)
-%B = BLAS3LUPP(A,1);
+%B = BLAS3LU(A,1);
+B = BLAS3LUPP(A,)
 toc
 
 [L,U,P] = lu(A);
