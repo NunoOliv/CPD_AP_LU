@@ -11,11 +11,13 @@ seed = rng(1);
 
 A = rand(4000);
 
+
 tic;
 %B = BLAS2LU(A);
 %B = BLAS2LUPP(A);
 
 B = BLAS3LU(A,100);
+
 %B = BLAS3LUPP(A,1);
 toc
 
