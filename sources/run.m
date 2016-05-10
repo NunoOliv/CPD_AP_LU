@@ -9,13 +9,13 @@ seed = rng(1);
 % 750
 % 1000
 
-A = rand(5000);
+A = rand(4000);
 
 tic;
 %B = BLAS2LU(A);
-B = BLAS2LUPP(A);
+%B = BLAS2LUPP(A);
 
-%B = BLAS3LU(A,1);
+B = BLAS3LU(A,100);
 %B = BLAS3LUPP(A,1);
 toc
 
@@ -30,7 +30,10 @@ for i=1:S
 end
 
 
-[~,~,P] = lu(A);
+ [L1,U1,P] = lu(A);
 
-Error = norm(P*A - L*U)
+Error = norm(A - L*U)
+
+
+
 % Error = norm(A - L*U)
